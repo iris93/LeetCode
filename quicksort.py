@@ -1,6 +1,6 @@
 #conding:utf-8
 # 这里复写一下快速排序
-
+#快速排序的时间复杂度为：O(nlogn)
 # 这种方法是最常见的，原地排序，递归方法实现，注意递归的结束条件。
 def sort1(s,start,end):
     if start>end:
