@@ -9,35 +9,6 @@
 # 返回: 1
 
 class Cmp:
-    # 这种方法是我最先想出来的，无奈超时了。
-    def cmp(self, g1, g2, records, n):
-        # write code here
-        g1b=[g1]
-        g1s=[g1]
-        tags = []
-        while n:
-            
-            for i in range(len(records)):
-                # print tags
-                if i in tags:
-                    # print i
-                    continue
-                elif records[i][0] in g1s :
-                    g1s.append(records[i][1])
-                    tags.append(i)
-                    n = n-1
-                elif records[i][1] in g1b:
-                    g1b.append(records[i][0])
-                    tags.append(i)
-                    n = n-1
-                elif records[i][1] in g1s and records[i][0] in g1b:
-                    tags.append(i)
-                    n = n-1
-        if g2 in g1s:
-            return 1
-        elif g2 in g1b:
-            return -1
-        else:return 0
             
     ##无语了，用这个堆栈做都超时了，没办法，参考别人的答案吧  
     ################
@@ -68,6 +39,5 @@ class Cmp:
        
 
 myObj = Cmp()
-# result = myObj.cmp(2,3,[[1,2],[2,4],[1,3],[4,3]],4)
 result = myObj.bystack(2,3,[[1,2],[4,4],[1,3],[4,3]],4)
 print result
